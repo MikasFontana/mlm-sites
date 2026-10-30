@@ -252,3 +252,10 @@ body.glowing .glow{opacity:.26}
 /* grade e pontos ficam atrás de tudo (texto, anel e setas) e cobrem a dobra inteira, mais fortes no meio do carrossel */
 .hero>.wrap,.hero>.scene{z-index:2}
 .hero::before,.hero::after{-webkit-mask-image:radial-gradient(ellipse 85% 75% at 50% 62%,#000 30%,transparent 100%);mask-image:radial-gradient(ellipse 85% 75% at 50% 62%,#000 30%,transparent 100%)}
+
+/* caso CuraPro */
+.cases .ph b small{display:block;font-weight:400;font-size:13px;opacity:.85;margin-top:4px;text-shadow:none}
+.cases .ph{aspect-ratio:16/10}
+.flow{align-items:center;gap:10px;margin-top:12px}
+.flow i{font-style:normal;color:var(--or);font-weight:700}
+@media(max-width:760px){.flow i{display:none}}
