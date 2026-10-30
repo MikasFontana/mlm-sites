@@ -113,7 +113,7 @@ $("#sitegrid").innerHTML = SITES.map((s) => {
 }).join("");
 
 // galeria de design: quantas imagens cada cartão tem em img/design/<nome>-N.webp
-const GAL = { camisetas: 9, adesivos: 2, cartoes: 2, folders: 5 };
+const GAL = { camisetas: 10, adesivos: 3, cartoes: 3 };
 $$(".ph[data-gal]").forEach((el) => { if (GAL[el.dataset.gal]) el.classList.add("zoom"); });
 function openGal(name, title) {
   $("#gal-t").textContent = title;
