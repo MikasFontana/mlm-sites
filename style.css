@@ -281,3 +281,18 @@ body.glowing .glow{opacity:.26}
 .bnr .cta{white-space:nowrap}
 @media(max-width:760px){.bnr{flex-direction:column;align-items:flex-start;padding:92px 20px 22px}.bnr .mascot{height:104px;left:20px;bottom:auto;top:-30px}}
 @keyframes bob{to{transform:translateY(-8px)}}
+
+/* Captações: foto apagada, título em vidro no centro; a cor volta no mouse e na onda de entrada */
+.cap{align-items:center;justify-content:center}
+.cap .bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(.15) brightness(.8);transition:filter .35s,transform .6s}
+.cap:hover .bg{filter:saturate(1.1) brightness(1);transform:scale(1.05)}
+.cap::after{background:radial-gradient(ellipse at center,rgba(0,0,0,.05),rgba(0,0,0,.35))}
+.cap .gt{position:relative;z-index:3;width:auto;max-width:82%;padding:14px 26px;text-align:center;font-size:clamp(17px,1.7vw,22px);font-weight:900;letter-spacing:-.01em;border-radius:18px;background:rgba(255,255,255,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.3);box-shadow:0 10px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.35);text-shadow:none;transition:transform .35s,background .35s}
+.cap:hover .gt{transform:translateY(-4px);background:rgba(255,255,255,.2)}
+.cap.wave .bg{animation:lit 1.5s ease backwards;animation-delay:calc(var(--i)*160ms)}
+/* celulares com perfis */
+.profiles .phone{display:block;margin:0}
+.profiles .phone .scr{background:#0b0d12}
+.profiles .phone .scr img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.profiles figcaption{text-align:center;margin-top:14px;font-weight:700}
+.profiles figcaption small{display:block;font-weight:400;font-size:13px;opacity:.7}

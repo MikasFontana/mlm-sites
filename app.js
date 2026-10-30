@@ -77,7 +77,7 @@ function openSvc(s) {
 // vídeos
 const V = window.VIDEOS || {};
 const card = (v) => `<div class="vc" data-id="${v.id}"><img loading="lazy" src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt=""><span>${v.t}</span></div>`;
-const TABS = [["vsl", "VSL"], ["reels", "Reels e Shorts"], ["videoaulas", "Vídeo-aulas"], ["vinhetas", "Vinhetas"], ["youtube", "YouTube e Podcast"]];
+const TABS = [["vsl", "VSL"], ["reels", "Reels e Shorts"], ["videoaulas", "Vídeo-aulas"], ["vinhetas", "Vinhetas"], ["youtube", "YouTube e Podcast"], ["eventos", "Eventos e institucionais"]];
 let cur = "vsl", all = false;
 let inView = false;
 function wave() {
@@ -96,15 +96,7 @@ $("#tabs").onclick = (e) => { if (e.target.dataset.k) { cur = e.target.dataset.k
 $("#more").onclick = () => { all = true; drawVideos(); };
 drawVideos();
 $("#live").innerHTML = (V["ao-vivo"] || []).map(card).join("");
-// celulares com Reels: o vídeo só carrega quando a seção aparece
-$("#phones").innerHTML = (V.reels || []).slice(0, 3).map((v) => `<div class="phone rv"><div class="scr" data-id="${v.id}"></div></div>`).join("");
-const pio = new IntersectionObserver((es) => es.forEach((en) => {
-  if (!en.isIntersecting) return;
-  const id = en.target.dataset.id;
-  en.target.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?mute=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen loading="lazy"></iframe>`;
-  pio.unobserve(en.target);
-}), { rootMargin: "200px" });
-$$(".phone .scr").forEach((e) => pio.observe(e));
+
 
 // sites
 $("#sitegrid").innerHTML = SITES.map((s) => {
@@ -194,7 +186,11 @@ onScroll();
 // imagens dos cartões: entram quando o arquivo existir (senão fica o fundo em degradê)
 $$("[data-img]").forEach((el) => {
   const im = new Image();
-  im.onload = () => { el.style.backgroundImage = `url(${im.src})`; el.classList.add("has-img"); };
+  im.onload = () => {
+    if (el.hasAttribute("data-layer")) { const bg = document.createElement("i"); bg.className = "bg"; bg.style.backgroundImage = `url(${im.src})`; el.prepend(bg); }
+    else el.style.backgroundImage = `url(${im.src})`;
+    el.classList.add("has-img");
+  };
   im.src = el.dataset.img;
 });
 $$("[data-bg]").forEach((el) => {
@@ -217,3 +213,9 @@ if (matchMedia("(pointer: fine)").matches && !matchMedia("(prefers-reduced-motio
     requestAnimationFrame(glow);
   })();
 }
+
+// Captações: ao chegar na dobra os cartões acendem em sequência e voltam a ficar apagados
+new IntersectionObserver((es) => es.forEach((en) => {
+  if (!en.isIntersecting) return;
+  $$(".cap", en.target).forEach((c, i) => { c.style.setProperty("--i", i); c.classList.remove("wave"); void c.offsetWidth; c.classList.add("wave"); });
+}), { threshold: 0.35 }).observe($("#captacoes .cards3"));

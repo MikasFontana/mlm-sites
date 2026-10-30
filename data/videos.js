@@ -27,6 +27,26 @@ window.VIDEOS={
   {
    "id": "qj6liNP0hV8",
    "t": "Edição de PodCast - em Inglês"
+  },
+  {
+   "id": "CugL6cf7qSk",
+   "t": "Edição de vídeo para youtube"
+  },
+  {
+   "id": "SMQz-fQDVos",
+   "t": "Edição para canais de Youtube"
+  },
+  {
+   "id": "Lez5OcHaFgk",
+   "t": "Modelo de edição de vídeo para canais de Youtube"
+  },
+  {
+   "id": "TYPu8xuyns4",
+   "t": "OAB"
+  },
+  {
+   "id": "n7gbc4MyiC4",
+   "t": "CORTE1 YouTuber POLICIAL"
   }
  ],
  "reels": [
@@ -253,6 +273,18 @@ window.VIDEOS={
   {
    "id": "o9aPnfs6aF4",
    "t": "Modelo de Vinheta - Cinematográfica para mentoria"
+  },
+  {
+   "id": "QVhUO_3r_yY",
+   "t": "Vinheta 1 SOM"
+  },
+  {
+   "id": "SoVxmfEETg0",
+   "t": "Versão 02   Vinheta final"
+  },
+  {
+   "id": "dEcGHvmBUGg",
+   "t": "Modelo de VInheta - Curta de aula para concursos"
   }
  ],
  "vsl": [
@@ -367,6 +399,20 @@ window.VIDEOS={
   {
    "id": "7dwOKe2kfOo",
    "t": "VSL Cinematográfica em Reels | Obesidade – Edição Profissional"
+  },
+  {
+   "id": "mQTSLOn6tDs",
+   "t": "Modelo de VSL - Frequencia 369 (formato Feed)"
+  }
+ ],
+ "eventos": [
+  {
+   "id": "SP6Xn902ANU",
+   "t": "Edição de Vídeos Institucionais - Eventos"
+  },
+  {
+   "id": "tak3YQ0iNt8",
+   "t": "Edição de vídeos institucionais - Feiras e Eventos"
   }
  ]
 };
