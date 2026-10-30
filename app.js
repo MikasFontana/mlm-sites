@@ -226,7 +226,7 @@ const CASES = [
     intro: "Da marca ao evento: criamos a identidade da CuraPro e cuidamos de tudo o que nasceu dela.",
     items: ["Branding: logo em 4 versões, manual da marca, cores, fontes e ícones", "Identidade aplicada: camisetas, cartões, adesivos, folders e materiais", "Site, landing pages e plataforma de cursos", "Roteiro, gravação presencial e edição da VSL", "Eventos, feiras, lives e palestras: captação, estande e recepção", "Campanhas: criativos, artes e materiais de divulgação", "Reuniões, visitas presenciais e acompanhamento no dia a dia"],
     steps: ["Reuniões e visitas presenciais", "Branding e manual da marca", "Peças e materiais impressos", "Site, LPs e plataforma de cursos", "Roteiro, gravação e VSL", "Eventos, lives e acompanhamento"],
-    photos: ["img/curapro/manual.webp", "img/curapro/estande.webp", "img/curapro/plateia.webp", "img/design/camisetas-1.webp", "img/design/cartoes-1.webp", "img/design/adesivos-1.webp", "img/cases/curapro-folder-1.webp", "img/cases/curapro-folder-2.webp", "img/sites/curapro.jpg"] },
+    photos: ["img/curapro/manual.webp", "img/curapro/estande.webp", "img/curapro/plateia.webp", "img/design/camisetas-1.webp", "img/design/cartoes-1.webp", "img/design/adesivos-1.webp", "img/cases/curapro-folder-jarvis.webp", "img/sites/curapro.jpg"] },
   { id: "vidafit", name: "VidaFit Academia", sub: "Social mídia, tráfego pago e identidade", img: "img/cases/vidafit-logo.webp", tag: "DO ZERO",
     intro: "Começamos do zero com a VidaFit e construímos a presença digital inteira.",
     items: ["Criação do logo e da identidade visual", "Social mídia: planejamento, artes e publicações", "Tráfego pago", "Edição de vídeos"],
