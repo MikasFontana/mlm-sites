@@ -55,23 +55,14 @@
   </div>
 </section>
 
-<section class="sec" id="curapro">
+<section class="sec" id="cases">
   <div class="wrap">
-    <div class="mono">// caso_01 &middot; curapro</div>
-    <span class="tag">CASE DE SUCESSO</span>
-    <h2>CuraPro: uma parceria<br><em>de ponta a ponta</em>.</h2>
-    <p class="lead">Da marca ao evento: criamos a identidade da CuraPro e cuidamos de tudo o que nasceu dela.</p>
-    <div class="cards3 cases">
-      <div class="glass ph rv" data-img="img/curapro/manual.webp"><b>Branding<br><small>Manual da marca e identidade visual completa</small></b></div>
-      <div class="glass ph rv" data-img="img/design/camisetas-1.webp"><b>Identidade aplicada<br><small>Camisetas, cartões, adesivos e materiais</small></b></div>
-      <div class="glass ph rv" data-img="img/sites/curapro.jpg"><b>Site e curso<br><small>Landing page, plataforma e acompanhamento</small></b></div>
-      <div class="glass ph rv" data-img="img/curapro/estande.webp"><b>Eventos e feiras<br><small>Captação, estande e recepção</small></b></div>
-      <div class="glass ph rv" data-img="img/curapro/plateia.webp"><b>Lives e palestras<br><small>Transmissão e cobertura ao vivo</small></b></div>
-      <div class="glass ph rv"><b>Campanhas<br><small>Criativos, artes e materiais de divulgação</small></b></div>
-    </div>
-    <div class="mono center" style="margin-top:44px">// o_que_fizemos_juntos</div>
-    <div class="flowline"><div class="rv"><b>01</b><span>Reuniões e visitas presenciais</span></div><div class="rv"><b>02</b><span>Branding e manual da marca</span></div><div class="rv"><b>03</b><span>Peças e materiais impressos</span></div><div class="rv"><b>04</b><span>Site, LPs e plataforma do curso</span></div><div class="rv"><b>05</b><span>Roteiro, gravação e VSL</span></div><div class="rv"><b>06</b><span>Eventos, lives e acompanhamento</span></div></div>
-    <div class="center"><button class="cta" data-contact data-msg="Quero uma parceria de ponta a ponta como a da CuraPro">Quero uma parceria assim</button></div>
+    <div class="mono">// cases_de_sucesso</div>
+    <span class="tag">CASES DE SUCESSO</span>
+    <h2>Quem confia, <em>cresce com a gente</em>.</h2>
+    <p class="lead">Parcerias de ponta a ponta, do logo ao lançamento. Clique em um case para ver tudo o que fizemos.</p>
+    <div class="cards3 cases" id="casegrid"></div>
+    <div class="center"><button class="cta" data-contact data-msg="Quero uma parceria de ponta a ponta como os cases de sucesso da MLM">Quero um case assim</button></div>
   </div>
 </section>
 
@@ -246,6 +237,22 @@
 
 <!-- galeria de design -->
 <div class="modal" id="galm"><div class="box wide gal"><button class="x" data-close>&times;</button><h2 id="gal-t"></h2><div class="galgrid" id="galgrid"></div></div></div>
+
+<!-- case de sucesso -->
+<div class="modal" id="casem"><div class="glass box casebox">
+  <button class="x" data-close aria-label="Fechar">&times;</button>
+  <div class="case-grid">
+    <div class="case-txt">
+      <span class="tag" id="cs-tag"></span>
+      <h2 id="cs-name"></h2>
+      <p class="lead" id="cs-intro"></p>
+      <ul class="case-list" id="cs-list"></ul>
+      <div class="flowline" id="cs-flow"></div>
+      <div class="row"><button class="cta" data-contact data-msg="Quero uma parceria como a de vocês">Quero uma parceria assim</button><a class="ghost" id="cs-link" target="_blank" rel="noopener" hidden></a><button class="ghost" data-close>Fechar</button></div>
+    </div>
+    <div class="case-photos" id="cs-photos"></div>
+  </div>
+</div></div>
 
 <!-- vídeo -->
 <div class="modal" id="vidm"><div class="box wide"><button class="x" data-close>&times;</button><div class="frame"></div></div></div>

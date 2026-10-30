@@ -219,3 +219,67 @@ new IntersectionObserver((es) => es.forEach((en) => {
   if (!en.isIntersecting) return;
   $$(".cap", en.target).forEach((c, i) => { c.style.setProperty("--i", i); c.classList.remove("wave"); void c.offsetWidth; c.classList.add("wave"); });
 }), { threshold: 0.35 }).observe($("#captacoes .cards3"));
+
+// cases de sucesso: cartão abre um box de vidro com tudo o que a MLM fez
+const CASES = [
+  { id: "curapro", name: "CuraPro", sub: "Marca, site, cursos, eventos e campanhas", img: "img/curapro/manual.webp", tag: "PARCERIA DE PONTA A PONTA",
+    intro: "Da marca ao evento: criamos a identidade da CuraPro e cuidamos de tudo o que nasceu dela.",
+    items: ["Branding: logo em 4 versões, manual da marca, cores, fontes e ícones", "Identidade aplicada: camisetas, cartões, adesivos e materiais", "Site, landing pages e plataforma de cursos", "Roteiro, gravação presencial e edição da VSL", "Eventos, feiras, lives e palestras: captação, estande e recepção", "Campanhas: criativos, artes e materiais de divulgação", "Reuniões, visitas presenciais e acompanhamento no dia a dia"],
+    steps: ["Reuniões e visitas presenciais", "Branding e manual da marca", "Peças e materiais impressos", "Site, LPs e plataforma de cursos", "Roteiro, gravação e VSL", "Eventos, lives e acompanhamento"],
+    photos: ["img/curapro/manual.webp", "img/curapro/estande.webp", "img/curapro/plateia.webp", "img/design/camisetas-1.webp", "img/design/cartoes-1.webp", "img/design/adesivos-1.webp", "img/sites/curapro.jpg"] },
+  { id: "vidafit", name: "VidaFit Academia", sub: "Social mídia, tráfego pago e identidade", img: "img/social/vidafit.webp", pos: "top", tag: "DO ZERO",
+    intro: "Começamos do zero com a VidaFit e construímos a presença digital inteira.",
+    items: ["Criação do logo e da identidade visual", "Social mídia: planejamento, artes e publicações", "Tráfego pago", "Edição de vídeos"],
+    mock: "crm", photos: ["img/social/vidafit.webp"] },
+  { id: "charles", name: "Professor Charles", sub: "Videoaulas, lives e plataforma de cursos", img: "img/social/charles.webp", pos: "top", tag: "DO ZERO",
+    intro: "Do logo ao lançamento do curso: estruturamos tudo para o professor.",
+    items: ["Criação do logo", "Videoaulas: gravação orientada e edição", "Postagens e social mídia", "Lives, com configuração e acompanhamento do OBS", "Lançamento do curso", "Estruturação completa da plataforma de cursos"],
+    mock: "plataforma", link: "https://charlesazevedo.hotmart.host/cursodireitoempresarial", linkText: "Ver a página do curso", photos: ["img/social/charles.webp"] },
+  { id: "witte", name: "Captain Witte", sub: "Edição, página, tráfego e plataforma de cursos", img: "img/cases/witte-captv.webp", tag: "PARCERIA COMPLETA",
+    intro: "Cuidamos da parte técnica e do atendimento para o professor focar em ensinar.",
+    items: ["Edição de vídeos", "Logotipo", "Página de apresentação", "Tráfego pago", "Estruturação do curso na plataforma de cursos", "Atendimento ao aluno e suporte", "Lives: configuração do OBS e acompanhamento"],
+    mock: "plataforma", photos: ["img/cases/witte-logo.png", "img/cases/witte-captv.webp", "img/cases/witte-banner.webp", "img/cases/witte-duvida.webp"] },
+  { id: "qualis", name: "Qualis Concursos", sub: "Plataforma, tráfego, CRM e apoio ao aluno", img: "img/sites/qualis.jpg", tag: "OPERAÇÃO COMPLETA",
+    intro: "Somos a retaguarda da operação: da plataforma ao relacionamento com o aluno.",
+    items: ["Plataforma de cursos: parte administrativa de todos os cursos", "Tráfego pago", "Criativos e edição de vídeos para tráfego", "CRM, vendas e apoio ao aluno", "Atendimento aos alunos"],
+    photos: ["img/cases/qualis-vendas.webp", "img/sites/qualis.jpg"] },
+  { id: "squad", name: "Squad Concursos", sub: "Estúdio, agenda, plataforma e lives", img: "img/cases/squad-estudio-1.webp", tag: "GESTÃO DO ESTÚDIO",
+    intro: "Cuidamos do estúdio de gravação e de toda a operação do ensino a distância.",
+    items: ["Gestão do estúdio e das gravações", "Contato com os professores, agenda do estúdio e grade de gravação", "Site da escola", "Plataforma de cursos", "Atendimento ao aluno pelo site", "Lives: realização e acompanhamento"],
+    photos: ["img/cases/squad-site.webp", "img/cases/squad-estudio-1.webp", "img/cases/squad-estudio-2.webp", "img/cases/squad-camera.webp", "img/cases/squad-teleprompter.webp"] },
+  { id: "maepancreas", name: "MaePancreas", sub: "Lives de lançamento e acompanhamento de cursos", img: "", tag: "BASTIDORES DO LANÇAMENTO", handle: "@maepancreas", video: "img/cases/maepancreas.mp4",
+    intro: "Acompanhamos os cursos da MaePancreas e fazemos a live de lançamento acontecer, junto com ela.",
+    items: ["Acompanhamento dos cursos", "Responsabilidade pelas lives de lançamento, junto com ela", "Cuidado com o público e com o chat", "Troca de cenas e condução técnica da live"],
+    photos: [] },
+];
+$("#casegrid").innerHTML = CASES.map((c) => `<div class="glass ph rv in" role="button" tabindex="0" data-case="${c.id}" ${c.img ? `data-img="${c.img}"` : ""}><b>${c.name}<small>${c.sub}</small></b></div>`).join("");
+CASES.filter((c) => c.pos).forEach((c) => { $(`[data-case="${c.id}"]`).style.backgroundPosition = c.pos; });
+$$("#casegrid [data-img]").forEach((el) => { const im = new Image(); im.onload = () => { el.style.backgroundImage = `url(${im.src})`; el.classList.add("has-img"); }; im.src = el.dataset.img; });
+
+// ilustrações: telas desenhadas para mostrar o tipo de trabalho, sem nenhum dado real
+const TAG = { b: "Tráfego pago", g: "Positivo", l: "Matrícula", y: "Pendente", x: "Não compareceu", r: "Sem retorno", p: "Yoga", o: "Indicação" };
+const MOCKS = {
+  crm: () => {
+    const rows = [["Aluna 01", "08/10", "Experimental", "b g"], ["Aluno 02", "06/10", "Experimental", "b l"], ["Aluna 03", "05/10", "Experimental", "p b g"], ["Aluno 04", "03/10", "Experimental", "b x"], ["Aluna 05", "02/10", "Visita", "o y"], ["Aluno 06", "09/10", "Experimental", "b r"]];
+    return `<div class="mock"><div class="mock-h"><b>CRM · aulas experimentais</b><em>exemplo ilustrativo</em></div><table><thead><tr><th>Nome</th><th>Aula</th><th>Retorno</th></tr></thead><tbody>${rows.map(([n, d, t, g]) => `<tr><td>${n}</td><td>${d} · ${t.slice(0, 4)}.</td><td>${g.split(" ").map((k) => `<span class="tg t-${k}">${TAG[k]}</span>`).join("")}</td></tr>`).join("")}</tbody></table></div>`;
+  },
+  plataforma: () => `<div class="mock plat"><div class="mock-h"><b>Plataforma de cursos</b><em>exemplo ilustrativo</em></div><div class="plat-body"><div class="plat-side"><i class="on">Módulo 1 · Introdução</i><i>Módulo 2 · Fundamentos</i><i>Módulo 3 · Prática</i><i>Módulo 4 · Avaliação</i></div><div class="plat-main"><div class="vid"><span>&#9654;</span></div><b>Aula 03 · Título da aula</b><div class="bar"><u></u></div><small>Seu progresso no curso</small><ul><li class="ok">Aula 01</li><li class="ok">Aula 02</li><li class="now">Aula 03</li><li>Aula 04</li></ul></div></div></div>`,
+};
+function openCase(id) {
+  const c = CASES.find((x) => x.id === id);
+  $("#cs-tag").textContent = c.tag;
+  $("#cs-name").textContent = c.name;
+  $("#cs-intro").innerHTML = c.intro + (c.handle ? ` <b class="handle">${c.handle}</b>` : "");
+  $("#cs-list").innerHTML = c.items.map((t) => `<li>${t}</li>`).join("");
+  $("#cs-flow").innerHTML = (c.steps || []).map((t, i) => `<div><b>0${i + 1}</b><span>${t}</span></div>`).join("");
+  $("#cs-flow").style.display = c.steps ? "" : "none";
+  $("#cs-photos").innerHTML = (c.video ? `<video src="${c.video}" autoplay muted loop playsinline controls></video>` : "") + (c.mock ? MOCKS[c.mock]() : "") + c.photos.map((p) => `<img src="${p}" alt="${c.name}" loading="lazy">`).join("");
+  $("#casem .casebox").classList.toggle("nophoto", !(c.photos.length || c.video || c.mock));
+  $("#casem .casebox").scrollTop = 0;
+  const lk = $("#cs-link");
+  lk.hidden = !c.link;
+  if (c.link) { lk.href = c.link; lk.textContent = c.linkText || "Ver mais"; }
+  modal("casem", true);
+}
+document.addEventListener("click", (e) => { const k = e.target.closest("[data-case]"); if (k) openCase(k.dataset.case); });
+document.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.dataset && e.target.dataset.case) openCase(e.target.dataset.case); });

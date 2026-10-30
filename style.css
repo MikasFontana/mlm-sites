@@ -300,3 +300,54 @@ body.glowing .glow{opacity:.26}
 .profiles .phone:nth-child(even){transform:translateY(-22px)}
 .profiles .phone:hover{transform:translateY(-10px) scale(1.03)}
 @media(max-width:760px){.profiles .phone:nth-child(even){transform:none}}
+
+
+/* cases de sucesso: box de vidro com tudo o que fizemos */
+.casebox{max-width:1040px;width:100%;max-height:90vh;overflow:auto;padding:36px}
+.case-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start}
+.casebox.nophoto .case-grid{grid-template-columns:1fr}
+.casebox.nophoto .case-photos{display:none}
+.case-list{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:9px}
+.case-list li{position:relative;padding-left:26px;font-size:15px;line-height:1.45}
+.case-list li::before{content:"";position:absolute;left:0;top:.45em;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--or),var(--pu));box-shadow:0 0 12px rgba(255,122,26,.55)}
+.case-photos{display:grid;gap:12px}
+.case-photos img{width:100%;border-radius:16px;display:block;border:1px solid rgba(255,255,255,.18)}
+.casebox .flowline{margin:26px 0 8px;grid-template-columns:repeat(3,1fr);row-gap:22px}
+.casebox .flowline::before{display:none}
+.casebox .flowline div{padding-top:38px}
+.casebox .row{margin-top:24px}
+.casebox h2{margin:12px 0 8px}
+#casegrid .ph{cursor:pointer}
+@media(max-width:760px){.case-grid{grid-template-columns:1fr}.casebox{padding:26px 18px}.casebox .flowline{grid-template-columns:1fr}}
+
+#casegrid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+@media(min-width:1100px){#casegrid{grid-template-columns:repeat(4,1fr)}}
+
+/* ilustrações e vídeo dentro do box de case */
+.case-photos video{width:100%;border-radius:16px;display:block;border:1px solid rgba(255,255,255,.18);background:#000}
+.handle{color:var(--or);font-weight:800}
+.mock{border-radius:16px;border:1px solid rgba(255,255,255,.18);background:rgba(8,5,18,.75);overflow:hidden;font-size:12px}
+.mock-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.12)}
+.mock-h em{font-style:normal;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--or);background:none;-webkit-text-fill-color:currentColor}
+.mock table{width:100%;border-collapse:collapse}
+.mock th{text-align:left;padding:8px 10px;font-size:11px;opacity:.65;font-weight:600;background:rgba(123,60,255,.25)}
+.mock td{padding:8px 10px;border-top:1px solid rgba(255,255,255,.07);white-space:nowrap}
+.mock td:nth-child(4){white-space:normal}
+.tg{display:inline-block;margin:1px 3px 1px 0;padding:2px 8px;border-radius:999px;font-size:10.5px;font-weight:700;color:#fff}
+.t-b{background:#2563eb}.t-g{background:#16a34a}.t-l{background:#65a30d}.t-y{background:#d9a406;color:#1c1500}.t-x{background:#6b7280}.t-r{background:#dc2626}.t-p{background:#a855f7}.t-o{background:#f97316;color:#1c0f06}
+.plat-body{display:grid;grid-template-columns:34% 1fr}
+.plat-side{display:grid;align-content:start;border-right:1px solid rgba(255,255,255,.1)}
+.plat-side i{font-style:normal;padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.07);opacity:.7}
+.plat-side i.on{opacity:1;background:linear-gradient(90deg,rgba(255,122,26,.3),transparent);border-left:3px solid var(--or)}
+.plat-main{padding:12px}
+.plat-main .vid{aspect-ratio:16/9;border-radius:10px;background:linear-gradient(135deg,rgba(123,60,255,.5),rgba(255,122,26,.4));display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:10px}
+.plat-main .bar{height:6px;border-radius:6px;background:rgba(255,255,255,.14);margin:8px 0 4px;overflow:hidden}
+.plat-main .bar u{display:block;height:100%;width:62%;background:linear-gradient(90deg,var(--or),var(--pu))}
+.plat-main small{opacity:.6}
+.plat-main ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.plat-main li{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,.05)}
+.plat-main li.ok::before{content:"\2713  ";color:#4ade80}
+.plat-main li.now{background:rgba(255,122,26,.22)}
+@media(max-width:760px){.mock{font-size:11px}.mock td,.mock th{padding:6px}}
+.mock td:nth-child(3){white-space:normal}.mock td:nth-child(4){white-space:normal}
+.modal .casebox{max-width:1040px}
