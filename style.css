@@ -296,3 +296,7 @@ body.glowing .glow{opacity:.26}
 .profiles .phone .scr img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .profiles figcaption{text-align:center;margin-top:14px;font-weight:700}
 .profiles figcaption small{display:block;font-weight:400;font-size:13px;opacity:.7}
+.profiles .phone:nth-child(2){transform:none}
+.profiles .phone:nth-child(even){transform:translateY(-22px)}
+.profiles .phone:hover{transform:translateY(-10px) scale(1.03)}
+@media(max-width:760px){.profiles .phone:nth-child(even){transform:none}}
