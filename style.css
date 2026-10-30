@@ -270,3 +270,14 @@ body.glowing .glow{opacity:.26}
 @media(max-width:760px){.flowline{grid-template-columns:1fr;gap:18px;padding-left:0}.flowline::before{display:none}.flowline div{padding:0 0 0 46px;text-align:left}.flowline b{left:0;margin-left:0;top:-4px}}
 /* texto dos cartões da CuraPro legível mesmo sobre prints claros */
 .cases .ph::after{background:linear-gradient(transparent 25%,rgba(0,0,0,.86))}
+
+/* faixa da Oficina do BirutIA */
+.band{padding:40px 0}
+.bnr{display:flex;align-items:center;gap:26px;padding:18px 28px 18px 150px;position:relative;overflow:visible;border-color:rgba(255,122,26,.35);background:linear-gradient(100deg,rgba(255,122,26,.14),rgba(123,60,255,.16))}
+.bnr .mascot{position:absolute;left:22px;bottom:0;height:150px;width:auto;filter:drop-shadow(0 12px 22px rgba(123,60,255,.5));animation:bob 3.2s ease-in-out infinite alternate}
+.bnr .txt{flex:1}
+.bnr h3{font-size:clamp(19px,2.2vw,26px);line-height:1.15;margin:4px 0 6px}
+.bnr p{margin:0;font-size:15px;opacity:.88}
+.bnr .cta{white-space:nowrap}
+@media(max-width:760px){.bnr{flex-direction:column;align-items:flex-start;padding:92px 20px 22px}.bnr .mascot{height:104px;left:20px;bottom:auto;top:-30px}}
+@keyframes bob{to{transform:translateY(-8px)}}
