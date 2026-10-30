@@ -259,3 +259,4 @@ body.glowing .glow{opacity:.26}
 .flow{align-items:center;gap:10px;margin-top:12px}
 .flow i{font-style:normal;color:var(--or);font-weight:700}
 @media(max-width:760px){.flow i{display:none}}
+.cases .ph b small{margin-top:6px;line-height:1.35}
