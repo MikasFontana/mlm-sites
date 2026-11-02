@@ -1,0 +1,36 @@
+/* Prévia: vidro fosco estilo Apple (referência: "Glassy SideBar V5"). Camada por cima do style.css; remover este arquivo desfaz tudo. */
+.nav.glass,.team .glass,.stats .glass,.steps .glass,.glass.box:not(.casebox),.glass.promo,.glass.tilt,.glass.bnr,.glass.chart,.site.glass{
+  background:linear-gradient(135deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,.05) 45%,rgba(255,255,255,.09) 100%);
+  backdrop-filter:blur(30px) saturate(1.7) brightness(1.06);-webkit-backdrop-filter:blur(30px) saturate(1.7) brightness(1.06);
+  border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 24px 60px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.5),inset 1px 0 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(255,255,255,.06),inset 0 0 40px rgba(255,255,255,.04);
+}
+/* brilho que segue o mouse dentro do vidro */
+.nav.glass,.team .glass,.stats .glass,.steps .glass,.glass.box,.glass.promo,.glass.tilt,.glass.bnr,.glass.chart{--mx:50%;--my:0%}
+.team .glass::after,.stats .glass::after,.steps .glass::after,.glass.promo::after,.glass.tilt::after,.glass.bnr::after,.glass.chart::after,.glass.box:not(.casebox)::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;
+  background:radial-gradient(260px circle at var(--mx) var(--my),rgba(255,255,255,.22),transparent 70%);
+}
+.team .glass:hover::after,.stats .glass:hover::after,.steps .glass:hover::after,.glass.promo:hover::after,.glass.tilt:hover::after,.glass.bnr:hover::after,.glass.chart:hover::after,.glass.box:not(.casebox):hover::after{opacity:1}
+.team .glass:hover,.stats .glass:hover,.steps .glass:hover{border-color:rgba(255,255,255,.4)}
+/* barra: pílula de vidro que desliza até o link sob o mouse */
+.links{position:relative}
+.links a{position:relative;z-index:1;padding:8px 14px;border-radius:999px;transition:color .25s,opacity .25s}
+.links a:hover{color:#fff}
+.links .pilula{position:absolute;z-index:0;top:50%;height:36px;margin-top:-18px;border-radius:999px;pointer-events:none;opacity:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.26),rgba(255,255,255,.1));border:1px solid rgba(255,255,255,.35);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 6px 18px rgba(0,0,0,.3);backdrop-filter:blur(8px);
+  transition:left .32s cubic-bezier(.34,1.4,.5,1),width .32s cubic-bezier(.34,1.4,.5,1),opacity .2s}
+.links.on .pilula{opacity:1}
+@media (prefers-reduced-motion:reduce){.links .pilula{transition:none}}
+
+/* janelas (serviço e contato) no mesmo padrão de vidro */
+#svcm .box,#contm .box{
+  background:linear-gradient(135deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,.05) 45%,rgba(255,255,255,.09) 100%);
+  backdrop-filter:blur(30px) saturate(1.7) brightness(1.06);-webkit-backdrop-filter:blur(30px) saturate(1.7) brightness(1.06);
+  border:1px solid rgba(255,255,255,.2);border-radius:30px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.5),inset 1px 0 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(255,255,255,.06);
+}
+#svcm .row .ghost,#contm .ghost{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.35);backdrop-filter:blur(10px)}
+#svcm .row .ghost:hover,#contm .ghost:hover{background:rgba(255,255,255,.2)}
+.glass.promo,.glass.tilt{position:relative}

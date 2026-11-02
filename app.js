@@ -67,7 +67,7 @@ function openSvc(s) {
   $("#sm-p").textContent = s.p;
   const go = $("#sm-go");
   go.href = "#" + s.id;
-  go.onclick = () => modal("svcm", false);
+  go.onclick = () => { modal("svcm", false); };
   const c = $("#sm-cta");
   c.textContent = s.cta;
   c.dataset.msg = s.cta;

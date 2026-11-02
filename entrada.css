@@ -1,0 +1,11 @@
+/* Entrada: a logo grande flutua e vira; ao girar, se desconstrói em 6 pedaços e cada um vai para o seu cartão do carrossel. Uma vez por visita. */
+#intro{filter:drop-shadow(0 0 30px rgba(255,122,26,.5)) drop-shadow(0 0 60px rgba(123,60,255,.45));position:fixed;inset:0;z-index:70;pointer-events:none;perspective:1100px;overflow:hidden}
+#intro .pc{position:absolute;left:50%;top:50%;background-repeat:no-repeat;background-size:100% 100%;will-change:transform,opacity}
+.pre .hero .wrap,.pre .nav,.pre .arr{opacity:0!important}
+.fx #ring .glass.oc{opacity:0!important}
+.fx #ring .glass{transition:opacity .7s ease!important}
+.fx .hero .wrap,.fx .nav,.fx .arr{transition:opacity 1s}
+@media (prefers-reduced-motion:reduce){#intro{display:none}}
+
+/* escondido desde o primeiro quadro (classe posta por um script no <head>) para nada aparecer atrás da logo */
+.pre-i #ring .glass,.pre-i .hero .wrap,.pre-i .nav,.pre-i .arr{opacity:0!important;transition:none!important}
