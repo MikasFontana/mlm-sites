@@ -13,8 +13,8 @@
 <title>MLM Produções | Audiovisual, Conteúdo, Design e Sites</title>
 <meta name="description" content="Produtora criativa: edição de vídeos, captações, design, sites e landing pages, social mídia e tráfego pago. Captação em todo o Brasil.">
 <link rel="icon" href="img/logo-mlm-simbolo.png">
-<link rel="stylesheet" href="style.css">
-<script>try{var v=sessionStorage.getItem("mlm-entrada")==="1";if((/entrada/.test(location.search)||!v)&&!matchMedia("(prefers-reduced-motion:reduce)").matches&&!location.hash){document.documentElement.className+=" pre-i";setTimeout(function(){document.documentElement.classList.remove("pre-i")},8000)}}catch(e){}</script><link rel="stylesheet" href="vidro.css"><link rel="stylesheet" href="entrada.css"></head>
+<link rel="stylesheet" href="style.css?v=20261108b">
+<script>try{var v=sessionStorage.getItem("mlm-entrada")==="1";if((/entrada/.test(location.search)||!v)&&!matchMedia("(prefers-reduced-motion:reduce)").matches&&!location.hash){document.documentElement.className+=" pre-i";setTimeout(function(){document.documentElement.classList.remove("pre-i")},8000)}}catch(e){}</script><link rel="stylesheet" href="vidro.css?v=20261108b"><link rel="stylesheet" href="entrada.css?v=20261108b"></head>
 <body>
 <div class="glow o" aria-hidden="true"></div><div class="glow p" aria-hidden="true"></div>
 <nav class="nav glass">
@@ -81,8 +81,9 @@
     <p class="lead">VSLs, Reels, videoaulas, vinhetas e canais do YouTube. Roteiro visual, ritmo e acabamento pensados para reter e converter.</p>
     <div class="tabs" id="tabs"></div>
     <div class="tabs sub" id="subtabs" style="display:none"></div>
-    <div class="vgrid" id="vgrid"></div>
-    <div class="center"><button class="ghost" id="more">Ver todos os vídeos</button> <button class="cta" data-contact data-msg="Quero um vídeo assim">Quero um vídeo assim</button></div>
+    <div class="vwrap"><button class="vnav prev glass" aria-label="Vídeos anteriores"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="vview"><div class="vgrid" id="vgrid"></div></div><button class="vnav next glass" aria-label="Próximos vídeos"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div>
+    <div class="vdots" id="vdots"></div>
+    <div class="center"><button class="cta" data-contact data-msg="Quero um vídeo assim">Quero um vídeo assim</button></div>
   </div>
 </section>
 
@@ -262,19 +263,10 @@
   </div>
 </div></div>
 
-<!-- todos os vídeos da aba -->
-<div class="modal" id="vidsm"><div class="glass box vidbox" id="vsbox">
-  <button class="x" data-close aria-label="Fechar">&times;</button>
-  <span class="tag">TODOS OS VÍDEOS</span>
-  <h2 id="vs-title"></h2>
-  <div class="vgrid" id="vsgrid"></div>
-  <div class="row"><button class="ghost" data-close>Fechar</button></div>
-</div></div>
-
 <!-- vídeo -->
 <div class="modal" id="vidm"><div class="box wide"><button class="x" data-close>&times;</button><div class="frame"></div></div></div>
 
-<script src="data/videos.js"></script>
-<script src="app.js"></script>
-<script src="vidro.js"></script><script src="entrada.js"></script></body>
+<script src="data/videos.js?v=20261108b"></script>
+<script src="app.js?v=20261108b"></script>
+<script src="vidro.js?v=20261108b"></script><script src="entrada.js?v=20261108b"></script></body>
 </html>

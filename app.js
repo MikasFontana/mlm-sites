@@ -95,11 +95,29 @@ function pilulas() {
   });
 }
 addEventListener("resize", pilulas);
+const PER = 8;
+let page = 0;
+function renderPage(dir) {
+  const list = V[cur] || [], pages = Math.max(1, Math.ceil(list.length / PER));
+  page = ((page % pages) + pages) % pages;
+  const g = $("#vgrid");
+  g.innerHTML = list.slice(page * PER, page * PER + PER).map(card).join("");
+  g.classList.remove("to-l", "to-r"); void g.offsetWidth;
+  if (dir) g.classList.add(dir > 0 ? "to-l" : "to-r");
+  $$(".vnav").forEach((b) => (b.style.display = pages > 1 ? "" : "none"));
+  $("#vdots").innerHTML = pages > 1 ? Array.from({ length: pages }, (_, i) => `<button data-p="${i}" class="${i === page ? "on" : ""}" aria-label="Página ${i + 1}"></button>`).join("") : "";
+  wave();
+}
+function go(dir) { page += dir; renderPage(dir); }
+$(".vnav.prev").onclick = () => go(-1);
+$(".vnav.next").onclick = () => go(1);
+$("#vdots").onclick = (e) => { const p = e.target.dataset.p; if (p !== undefined) { const d = +p - page; page = +p; renderPage(d || 1); } };
+let sx = null;
+$("#vgrid").addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; }, { passive: true });
+$("#vgrid").addEventListener("touchend", (e) => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; sx = null; if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1); });
 function drawVideos() {
-  const list = V[cur] || [];
-  $("#vgrid").innerHTML = list.slice(0, 8).map(card).join("");
-  $("#more").style.display = list.length > 8 ? "" : "none";
-  $("#more").textContent = `Ver todos os ${list.length} vídeos`;
+  page = 0;
+  renderPage(0);
   const sub = cur.startsWith("reels");
   $("#subtabs").style.display = sub ? "" : "none";
   $$("#tabs button").forEach((b) => b.classList.toggle("on", b.dataset.k === (sub ? "reels" : cur)));
@@ -117,14 +135,6 @@ function drawVideos() {
 $("#tabs").innerHTML = TABS.map(([k, n]) => `<button data-k="${k}">${n}</button>`).join("");
 $("#subtabs").innerHTML = SUBS.map(([k, n]) => `<button data-k="${k}">${n}</button>`).join("");
 $("#tabs").onclick = $("#subtabs").onclick = (e) => { if (e.target.dataset.k) { cur = e.target.dataset.k; drawVideos(); } };
-const tabName = () => { const b = $("#tabs button.on"), s = $("#subtabs button.on"); return b.textContent + (cur.startsWith("reels") && s ? " · " + s.textContent : ""); };
-$("#more").onclick = () => {
-  $("#vs-title").textContent = tabName();
-  $("#vsgrid").innerHTML = (V[cur] || []).map(card).join("");
-  $("#vsbox").scrollTop = 0;
-  modal("vidsm", true);
-  $$("#vsgrid .vc").forEach((v, i) => { v.style.setProperty("--i", Math.min(i, 15)); v.classList.add("wave"); });
-};
 drawVideos();
 $("#live").innerHTML = (V["ao-vivo"] || []).map(card).join("");
 

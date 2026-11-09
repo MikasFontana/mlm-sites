@@ -387,3 +387,19 @@ body.glowing .glow{opacity:.26}
 .tabs.sub.abre{animation:glassopen .6s cubic-bezier(.3,1.25,.5,1) backwards}
 .tabs.sub.abre button{animation:glassin .45s cubic-bezier(.2,.8,.3,1) backwards;animation-delay:.3s}
 @media(prefers-reduced-motion:reduce){.tabs .pil,.tabs.sub.abre,.tabs.sub.abre button{animation:none;transition:none}}
+
+/* vídeos em páginas de 8, com setas de vidro e pontinhos */
+.vwrap{position:relative}
+.vwrap .vgrid{margin:26px 0 16px}
+.vnav{position:absolute;top:50%;margin-top:-26px;z-index:3;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;padding:0;transition:transform .2s,background .2s,box-shadow .2s}
+.vnav.prev{left:-18px}.vnav.next{right:-18px}
+.vnav:hover{background:linear-gradient(135deg,var(--or),var(--pu));box-shadow:0 0 26px rgba(255,122,26,.55);transform:scale(1.1)}
+@keyframes slideL{from{opacity:0;transform:translateX(70px)}to{opacity:1;transform:none}}
+@keyframes slideR{from{opacity:0;transform:translateX(-70px)}to{opacity:1;transform:none}}
+.vgrid.to-l{animation:slideL .45s cubic-bezier(.2,.8,.3,1)}
+.vgrid.to-r{animation:slideR .45s cubic-bezier(.2,.8,.3,1)}
+.vdots{display:flex;gap:8px;justify-content:center;margin:0 0 22px}
+.vdots button{width:9px;height:9px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:none;cursor:pointer;transition:.3s}
+.vdots button.on{width:26px;border-radius:9px;background:linear-gradient(90deg,var(--or),var(--pu));border-color:transparent}
+@media(max-width:760px){.vnav{width:42px;height:42px;margin-top:-21px}.vnav.prev{left:-6px}.vnav.next{right:-6px}}
+@media(prefers-reduced-motion:reduce){.vgrid.to-l,.vgrid.to-r{animation:none}}
