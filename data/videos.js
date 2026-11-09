@@ -181,6 +181,98 @@ window.VIDEOS={
   {
    "id": "XP4Y1GHJxm8",
    "t": "Reels Educacional | Edição Dinâmica, Legendas e Dicas de Português"
+  },
+  {
+   "id": "bRk5NsN6G34",
+   "t": "Criativo para ADS | Edição Dinâmica com Legendas e Letterings"
+  },
+  {
+   "id": "jYHmznAO_mA",
+   "t": "Criativo para ADS | Edição com Legendas, Letterings e Música"
+  },
+  {
+   "id": "ndjWKshBp-M",
+   "t": "Criativo para ADS | Edição com Chroma Key e Letterings"
+  },
+  {
+   "id": "h8s-ZCJzO9E",
+   "t": "Criativo para Ads com IA | Tema Adulto, Edição Dinâmica e Legendas em Inglês"
+  },
+  {
+   "id": "0tJsiBQfV0o",
+   "t": "Criativo para ADS | Edição com Inteligência Artificial e Legendas em Inglês"
+  },
+  {
+   "id": "PxZtYPXb0cM",
+   "t": "Reels / Short de Conteúdo Adulto com IA | Lettering, Edição Dinâmica e Legendas em Inglês"
+  },
+  {
+   "id": "4mxEGuCciCc",
+   "t": "Reels de Conteúdo Adulto com IA | Edição Dinâmica e Legendas em Inglês | MLM Produção"
+  },
+  {
+   "id": "7mldkpLKMz4",
+   "t": "Edição Dinâmica para Reels Automotivo | Volkswagen Tiguan"
+  },
+  {
+   "id": "SeGFxg_ghL8",
+   "t": "Storymaker Profissional | Captação de Imagens, Legendas e Letterings"
+  },
+  {
+   "id": "JD077OXE35Q",
+   "t": "Storymaker para Eventos | Captação, Letterings e Música"
+  },
+  {
+   "id": "9vVc7T-Dnug",
+   "t": "Reels com Expert | Edição Dinâmica com Legendas, Música e Letterings"
+  },
+  {
+   "id": "huszcmq2ArM",
+   "t": "Reels de Depoimento com Expert | Legendas, Música e Letterings"
+  },
+  {
+   "id": "_1WxfqWkUdY",
+   "t": "Reels com Expert | Color Grading e Legenda"
+  },
+  {
+   "id": "VFiMSVQMhAk",
+   "t": "Reels com Expert | Legenda, Música e Color Grading"
+  },
+  {
+   "id": "NVdtWgFSC-Y",
+   "t": "Entrevista com Dois Experts em Reels / Short | Legenda e Color Grading"
+  },
+  {
+   "id": "pvV09EyiL50",
+   "t": "Reels para Divulgação de Produtos | Edição com Música e Letterings"
+  },
+  {
+   "id": "BOSNmMK4svs",
+   "t": "Reels de Loja | Apresentação de Produto com Legendas e Letterings"
+  },
+  {
+   "id": "nrz8Dgh6Z64",
+   "t": "Vídeo de Produto | Seleção de Imagens, Locução e Música"
+  },
+  {
+   "id": "o70Th3nQ3ps",
+   "t": "Vídeo Institucional de Curso de Photoshop | Música e Seleção de Imagens"
+  },
+  {
+   "id": "joesu_BwCgg",
+   "t": "Reels Educacional | Edição Criativa com Memes e Letterings"
+  },
+  {
+   "id": "iRtC3IostK8",
+   "t": "Reels para Divulgação de Expert | Edição com Lettering e Música"
+  },
+  {
+   "id": "ANSGtWPKYtM",
+   "t": "Reels / Short de Corte de Live | Copy, Legenda e Moldura Personalizada /"
+  },
+  {
+   "id": "da3-BCMxOcI",
+   "t": "Reels / Short de Corte de Live | Legenda, Copy e Moldura Personalizada"
   }
  ],
  "videoaulas": [
@@ -413,6 +505,194 @@ window.VIDEOS={
   {
    "id": "tak3YQ0iNt8",
    "t": "Edição de vídeos institucionais - Feiras e Eventos"
+  }
+ ],
+ "reels:anuncio": [
+  {
+   "id": "bRk5NsN6G34",
+   "t": "Criativo para ADS | Edição Dinâmica com Legendas e Letterings"
+  },
+  {
+   "id": "jYHmznAO_mA",
+   "t": "Criativo para ADS | Edição com Legendas, Letterings e Música"
+  },
+  {
+   "id": "DNVCJg50GMM",
+   "t": "Vídeo Publicitário para Feed | Edição de Anúncio para Redes Sociais"
+  },
+  {
+   "id": "A0k-Fslg12w",
+   "t": "Story para ADS com Moldura Personalizada   Adaptação de Vídeo Quadrado"
+  },
+  {
+   "id": "SmYR2vRSB7E",
+   "t": "Reels para Divulgação de Livro com Chroma Key | Edição para Redes Sociais"
+  },
+  {
+   "id": "scTOVNKS45w",
+   "t": "Reels Publicitário com Lettering e Trilha Musical"
+  },
+  {
+   "id": "ndjWKshBp-M",
+   "t": "Criativo para ADS | Edição com Chroma Key e Letterings"
+  }
+ ],
+ "reels:nichoblack": [
+  {
+   "id": "h8s-ZCJzO9E",
+   "t": "Criativo para Ads com IA | Tema Adulto, Edição Dinâmica e Legendas em Inglês"
+  },
+  {
+   "id": "0tJsiBQfV0o",
+   "t": "Criativo para ADS | Edição com Inteligência Artificial e Legendas em Inglês"
+  },
+  {
+   "id": "PxZtYPXb0cM",
+   "t": "Reels / Short de Conteúdo Adulto com IA | Lettering, Edição Dinâmica e Legendas em Inglês"
+  },
+  {
+   "id": "4mxEGuCciCc",
+   "t": "Reels de Conteúdo Adulto com IA | Edição Dinâmica e Legendas em Inglês | MLM Produção"
+  }
+ ],
+ "reels:evento": [
+  {
+   "id": "CPqVz1VvQuQ",
+   "t": "Storymaker Profissional | Captação de Imagens, Produção e Legendas"
+  },
+  {
+   "id": "7mldkpLKMz4",
+   "t": "Edição Dinâmica para Reels Automotivo | Volkswagen Tiguan"
+  },
+  {
+   "id": "SeGFxg_ghL8",
+   "t": "Storymaker Profissional | Captação de Imagens, Legendas e Letterings"
+  },
+  {
+   "id": "JD077OXE35Q",
+   "t": "Storymaker para Eventos | Captação, Letterings e Música"
+  }
+ ],
+ "reels:expert": [
+  {
+   "id": "9vVc7T-Dnug",
+   "t": "Reels com Expert | Edição Dinâmica com Legendas, Música e Letterings"
+  },
+  {
+   "id": "huszcmq2ArM",
+   "t": "Reels de Depoimento com Expert | Legendas, Música e Letterings"
+  },
+  {
+   "id": "sxyCE2sx_mA",
+   "t": "Reels para Divulgação de Serviços | Expert, Letterings, Legendas e Música"
+  },
+  {
+   "id": "lnbAn3HZk14",
+   "t": "Reels para Divulgação de Expert | Edição com Letterings e Legendas"
+  },
+  {
+   "id": "_1WxfqWkUdY",
+   "t": "Reels com Expert | Color Grading e Legenda"
+  },
+  {
+   "id": "VFiMSVQMhAk",
+   "t": "Reels com Expert | Legenda, Música e Color Grading"
+  },
+  {
+   "id": "bFcQL3ae5D8",
+   "t": "Reels com Legendas Dinâmicas e Efeitos Visuais | Edição Profissional"
+  },
+  {
+   "id": "kKawA4lhVgo",
+   "t": "Reels de Perguntas e Respostas | Título, Legenda e CTA"
+  },
+  {
+   "id": "NVdtWgFSC-Y",
+   "t": "Entrevista com Dois Experts em Reels / Short | Legenda e Color Grading"
+  }
+ ],
+ "reels:loja": [
+  {
+   "id": "kL1nbFEo3F8",
+   "t": "Reels para Empresas | Captação de Imagens, Música e Letterings"
+  },
+  {
+   "id": "-izpUbT-TRg",
+   "t": "Reels para Divulgação de Empresas e Serviços | Expert + Fotos"
+  },
+  {
+   "id": "pvV09EyiL50",
+   "t": "Reels para Divulgação de Produtos | Edição com Música e Letterings"
+  },
+  {
+   "id": "BOSNmMK4svs",
+   "t": "Reels de Loja | Apresentação de Produto com Legendas e Letterings"
+  },
+  {
+   "id": "nrz8Dgh6Z64",
+   "t": "Vídeo de Produto | Seleção de Imagens, Locução e Música"
+  }
+ ],
+ "reels:educacionais": [
+  {
+   "id": "o70Th3nQ3ps",
+   "t": "Vídeo Institucional de Curso de Photoshop | Música e Seleção de Imagens"
+  },
+  {
+   "id": "joesu_BwCgg",
+   "t": "Reels Educacional | Edição Criativa com Memes e Letterings"
+  },
+  {
+   "id": "vBTSaUN2Kgc",
+   "t": "Reels de Perguntas com Legenda Interativa | Edição Criativa para Shorts"
+  },
+  {
+   "id": "XP4Y1GHJxm8",
+   "t": "Reels Educacional | Edição Dinâmica, Legendas e Dicas de Português"
+  },
+  {
+   "id": "iRtC3IostK8",
+   "t": "Reels para Divulgação de Expert | Edição com Lettering e Música"
+  },
+  {
+   "id": "ykpcy2NZc0w",
+   "t": "Reels de Correção de Questão | Trecho de Aula com Fundo Personalizado e Vinheta"
+  },
+  {
+   "id": "Xgjok1u1TCU",
+   "t": "Vídeos Nuggets (Nutella) | Dicas de Professor com Edição Profissional"
+  },
+  {
+   "id": "XT1lj-UEuqo",
+   "t": "Vídeo Nugget de Live | Edição de Reels com Fundo Personalizado"
+  }
+ ],
+ "reels:imoveis": [
+  {
+   "id": "FCGg2Do3DQw",
+   "t": "Reels Imobiliário | Edição de Vídeo e Locução Profissional"
+  },
+  {
+   "id": "8aEhqKeK8EU",
+   "t": "Vídeo Imobiliário para Facebook e Instagram | Edição com Música e Legendas"
+  },
+  {
+   "id": "vk72tzzEGkY",
+   "t": "Vídeos Publicitários para Redes Sociais | Edição Profissional"
+  }
+ ],
+ "reels:live": [
+  {
+   "id": "ANSGtWPKYtM",
+   "t": "Reels / Short de Corte de Live | Copy, Legenda e Moldura Personalizada /"
+  },
+  {
+   "id": "AfwwWVoQ-cQ",
+   "t": "Reels Profissional para Curso de Diabetes | Adaptação de Vídeo Horizontal"
+  },
+  {
+   "id": "da3-BCMxOcI",
+   "t": "Reels / Short de Corte de Live | Legenda, Copy e Moldura Personalizada"
   }
  ]
 };

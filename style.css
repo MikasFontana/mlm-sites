@@ -351,3 +351,4 @@ body.glowing .glow{opacity:.26}
 @media(max-width:760px){.mock{font-size:11px}.mock td,.mock th{padding:6px}}
 .mock td:nth-child(3){white-space:normal}.mock td:nth-child(4){white-space:normal}
 .modal .casebox{max-width:1040px}
+.tabs.sub{margin-top:-12px}.tabs.sub button{padding:7px 14px;font-size:13px;opacity:.9}

@@ -78,7 +78,8 @@ function openSvc(s) {
 const V = window.VIDEOS || {};
 const card = (v) => `<div class="vc" data-id="${v.id}"><img loading="lazy" src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt=""><span>${v.t}</span></div>`;
 const TABS = [["vsl", "VSL"], ["reels", "Reels e Shorts"], ["videoaulas", "Vídeo-aulas"], ["vinhetas", "Vinhetas"], ["youtube", "YouTube e Podcast"], ["eventos", "Eventos e institucionais"]];
-let cur = "vsl", all = false;
+const SUBS = [["reels", "Todos"], ["reels:anuncio", "Anúncio"], ["reels:nichoblack", "Nicho Black"], ["reels:evento", "Evento ao vivo"], ["reels:expert", "Expert"], ["reels:loja", "Loja"], ["reels:educacionais", "Educacionais"], ["reels:imoveis", "Imobiliário"], ["reels:live", "Live"]];
+let cur = "vsl";
 let inView = false;
 function wave() {
   $$("#vgrid .vc").forEach((v, i) => { v.style.setProperty("--i", Math.min(i, 11)); v.classList.remove("wave"); void v.offsetWidth; v.classList.add("wave"); });
@@ -86,14 +87,16 @@ function wave() {
 new IntersectionObserver((es) => es.forEach((en) => { inView = en.isIntersecting; if (inView) wave(); }), { threshold: 0.3 }).observe($("#vgrid"));
 function drawVideos() {
   const list = V[cur] || [];
-  $("#vgrid").innerHTML = (all ? list : list.slice(0, 6)).map(card).join("");
-  $("#more").style.display = !all && list.length > 6 ? "" : "none";
-  $$("#tabs button").forEach((b) => b.classList.toggle("on", b.dataset.k === cur));
+  $("#vgrid").innerHTML = list.map(card).join("");
+  const sub = cur.startsWith("reels");
+  $("#subtabs").style.display = sub ? "" : "none";
+  $$("#tabs button").forEach((b) => b.classList.toggle("on", b.dataset.k === (sub ? "reels" : cur)));
+  $$("#subtabs button").forEach((b) => b.classList.toggle("on", b.dataset.k === cur));
   if (inView) wave();
 }
 $("#tabs").innerHTML = TABS.map(([k, n]) => `<button data-k="${k}">${n}</button>`).join("");
-$("#tabs").onclick = (e) => { if (e.target.dataset.k) { cur = e.target.dataset.k; all = false; drawVideos(); } };
-$("#more").onclick = () => { all = true; drawVideos(); };
+$("#subtabs").innerHTML = SUBS.map(([k, n]) => `<button data-k="${k}">${n}</button>`).join("");
+$("#tabs").onclick = $("#subtabs").onclick = (e) => { if (e.target.dataset.k) { cur = e.target.dataset.k; drawVideos(); } };
 drawVideos();
 $("#live").innerHTML = (V["ao-vivo"] || []).map(card).join("");
 
