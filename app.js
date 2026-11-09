@@ -85,18 +85,46 @@ function wave() {
   $$("#vgrid .vc").forEach((v, i) => { v.style.setProperty("--i", Math.min(i, 11)); v.classList.remove("wave"); void v.offsetWidth; v.classList.add("wave"); });
 }
 new IntersectionObserver((es) => es.forEach((en) => { inView = en.isIntersecting; if (inView) wave(); }), { threshold: 0.3 }).observe($("#vgrid"));
+function pilulas() {
+  [$("#tabs"), $("#subtabs")].forEach((row) => {
+    if (!row.offsetParent) return;
+    let p = $(".pil", row);
+    if (!p) { p = document.createElement("i"); p.className = "pil"; row.prepend(p); }
+    const b = $("button.on", row);
+    if (b) p.style.cssText = `left:${b.offsetLeft}px;top:${b.offsetTop}px;width:${b.offsetWidth}px;height:${b.offsetHeight}px;opacity:1`;
+  });
+}
+addEventListener("resize", pilulas);
 function drawVideos() {
   const list = V[cur] || [];
-  $("#vgrid").innerHTML = list.map(card).join("");
+  $("#vgrid").innerHTML = list.slice(0, 8).map(card).join("");
+  $("#more").style.display = list.length > 8 ? "" : "none";
+  $("#more").textContent = `Ver todos os ${list.length} vídeos`;
   const sub = cur.startsWith("reels");
   $("#subtabs").style.display = sub ? "" : "none";
   $$("#tabs button").forEach((b) => b.classList.toggle("on", b.dataset.k === (sub ? "reels" : cur)));
   $$("#subtabs button").forEach((b) => b.classList.toggle("on", b.dataset.k === cur));
+  const st = $("#subtabs"), abriu = sub && !st.classList.contains("vis");
+  st.classList.toggle("vis", sub);
+  if (abriu) {
+    const rb = $("#tabs button.on");
+    st.style.transformOrigin = `${rb.offsetLeft + rb.offsetWidth / 2}px 0`;
+    st.classList.remove("abre"); void st.offsetWidth; st.classList.add("abre");
+  }
+  pilulas();
   if (inView) wave();
 }
 $("#tabs").innerHTML = TABS.map(([k, n]) => `<button data-k="${k}">${n}</button>`).join("");
 $("#subtabs").innerHTML = SUBS.map(([k, n]) => `<button data-k="${k}">${n}</button>`).join("");
 $("#tabs").onclick = $("#subtabs").onclick = (e) => { if (e.target.dataset.k) { cur = e.target.dataset.k; drawVideos(); } };
+const tabName = () => { const b = $("#tabs button.on"), s = $("#subtabs button.on"); return b.textContent + (cur.startsWith("reels") && s ? " · " + s.textContent : ""); };
+$("#more").onclick = () => {
+  $("#vs-title").textContent = tabName();
+  $("#vsgrid").innerHTML = (V[cur] || []).map(card).join("");
+  $("#vsbox").scrollTop = 0;
+  modal("vidsm", true);
+  $$("#vsgrid .vc").forEach((v, i) => { v.style.setProperty("--i", Math.min(i, 15)); v.classList.add("wave"); });
+};
 drawVideos();
 $("#live").innerHTML = (V["ao-vivo"] || []).map(card).join("");
 
@@ -131,8 +159,10 @@ document.addEventListener("click", (e) => {
     modal("svcm", false);
     modal("contm", true);
   }
+  const md = e.target.closest(".modal");
   if (e.target.closest("[data-close]") || e.target.classList.contains("modal")) {
-    $$(".modal").forEach((m) => m.classList.remove("on"));
+    if (md && md.id === "vidm") modal("vidm", false);
+    else $$(".modal").forEach((m) => m.classList.remove("on"));
     $("#vidm .frame").innerHTML = "";
   }
 });
@@ -286,3 +316,12 @@ function openCase(id) {
 }
 document.addEventListener("click", (e) => { const k = e.target.closest("[data-case]"); if (k) openCase(k.dataset.case); });
 document.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.dataset && e.target.dataset.case) openCase(e.target.dataset.case); });
+
+// o box nasce de onde foi o clique (origem da animação de abertura)
+document.addEventListener("click", (e) => { window.__ck = [e.clientX, e.clientY]; }, true);
+new MutationObserver((ms) => ms.forEach((m) => {
+  const md = m.target;
+  if (!md.classList.contains("on") || !window.__ck) return;
+  const box = md.querySelector(".vidbox,.casebox");
+  if (box) box.style.transformOrigin = `${window.__ck[0] - innerWidth / 2 + box.offsetWidth / 2}px ${window.__ck[1] - innerHeight / 2 + box.offsetHeight / 2}px`;
+})).observe(document.body, { subtree: true, attributes: true, attributeFilter: ["class"] });

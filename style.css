@@ -351,4 +351,39 @@ body.glowing .glow{opacity:.26}
 @media(max-width:760px){.mock{font-size:11px}.mock td,.mock th{padding:6px}}
 .mock td:nth-child(3){white-space:normal}.mock td:nth-child(4){white-space:normal}
 .modal .casebox{max-width:1040px}
-.tabs.sub{margin-top:-12px}.tabs.sub button{padding:7px 14px;font-size:13px;opacity:.9}
+.tabs.sub{margin-top:-6px}.tabs.sub button{padding:7px 14px;font-size:13px}
+
+/* box com todos os vídeos da aba */
+.modal .vidbox{max-width:1120px;width:100%;max-height:90vh;overflow:auto;padding:34px}
+.vidbox .vgrid{margin:18px 0}
+.vidbox h2{margin:10px 0 4px}
+
+/* box dos vídeos no estilo vidro: cartões fosco com borda fina colorida e legenda em fonte de código */
+.vidbox .vc{--c:rgba(74,222,128,.6);aspect-ratio:auto;overflow:visible;padding:8px;border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04));backdrop-filter:blur(16px) saturate(1.5);-webkit-backdrop-filter:blur(16px) saturate(1.5);border:1px solid var(--c);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 14px 34px rgba(0,0,0,.35)}
+.vidbox .vc:nth-child(4n+2){--c:rgba(168,110,255,.65)}
+.vidbox .vc:nth-child(4n+3){--c:rgba(255,140,40,.65)}
+.vidbox .vc:nth-child(4n+4){--c:rgba(255,90,160,.6)}
+.vidbox .vc:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 18px 44px rgba(0,0,0,.4),0 0 26px var(--c)}
+.vidbox .vc img{aspect-ratio:16/9;border-radius:15px}
+.vidbox .vc::after{inset:8px 8px auto 8px;aspect-ratio:16/9;border-radius:15px}
+.vidbox .vc span{position:static;opacity:1;transform:none;background:none;padding:9px 6px 3px;font-family:Consolas,"Courier New",monospace;font-size:12px;line-height:1.4;color:rgba(255,255,255,.88);-webkit-line-clamp:2}
+.vidbox .vc span::before{content:"// ";color:var(--or)}
+
+/* abertura dos boxes no efeito "Glassy SideBar": nasce pequeno como uma pílula de vidro e se expande com mola; o conteúdo entra em sequência */
+@keyframes glassopen{0%{transform:scale(.22,.12);border-radius:90px;opacity:0;filter:blur(8px)}55%{opacity:1;filter:blur(0)}78%{transform:scale(1.025,1.02)}100%{transform:none}}
+@keyframes glassin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.modal.on .vidbox,.modal.on .casebox{animation:glassopen .7s cubic-bezier(.3,1.25,.5,1) backwards}
+.modal.on .vidbox>*,.modal.on .casebox .case-txt>*,.modal.on .casebox .case-photos>*{animation:glassin .5s cubic-bezier(.2,.8,.3,1) backwards;animation-delay:.32s}
+.modal.on .vidbox .vc{animation:glassin .45s cubic-bezier(.2,.8,.3,1) backwards;animation-delay:calc(.38s + var(--i,0)*45ms)}
+@media(prefers-reduced-motion:reduce){.modal.on .vidbox,.modal.on .casebox,.modal.on .vidbox>*,.modal.on .casebox *,.modal.on .vidbox .vc{animation:none}}
+
+/* abas: pílula de vidro que desliza até a aba ativa; submenu dos Reels nasce como uma cápsula de vidro e se expande */
+.tabs{position:relative}
+.tabs button{position:relative;z-index:1}
+.tabs button.on{background:none;border-color:transparent;color:#fff}
+.tabs .pil{position:absolute;z-index:0;left:0;top:0;opacity:0;border-radius:999px;pointer-events:none;background:linear-gradient(135deg,var(--or),var(--pu));box-shadow:0 6px 22px rgba(255,122,26,.4),inset 0 1px 0 rgba(255,255,255,.45);transition:left .38s cubic-bezier(.34,1.45,.5,1),top .38s cubic-bezier(.34,1.45,.5,1),width .38s cubic-bezier(.34,1.45,.5,1),height .3s,opacity .2s}
+.tabs.sub{width:fit-content;max-width:100%;padding:7px;gap:6px;border-radius:30px;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 14px 34px rgba(0,0,0,.3)}
+.tabs.sub button{border-color:transparent;background:none}
+.tabs.sub.abre{animation:glassopen .6s cubic-bezier(.3,1.25,.5,1) backwards}
+.tabs.sub.abre button{animation:glassin .45s cubic-bezier(.2,.8,.3,1) backwards;animation-delay:.3s}
+@media(prefers-reduced-motion:reduce){.tabs .pil,.tabs.sub.abre,.tabs.sub.abre button{animation:none;transition:none}}
